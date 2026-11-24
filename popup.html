@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { font: 13px system-ui, sans-serif; margin: 12px; width: 200px; }
+    body { font: 13px system-ui, sans-serif; margin: 12px; width: 240px; }
     button { width: 100%; padding: 8px; font-size: 14px; cursor: pointer; }
+    #edit { margin-top: 6px; font-size: 13px; padding: 6px; }
     #status { margin-top: 8px; min-height: 1em; color: #444; }
+    #status ul { margin: 4px 0; padding-left: 16px; color: #b45309; }
     small { color: #777; }
   </style>
 </head>
 <body>
-  <button id="fill">Fill from .env</button>
+  <button id="fill">Fill form</button>
+  <button id="edit">Edit details</button>
   <div id="status"></div>
   <small>Shortcut: Alt+Shift+F</small>
   <script src="popup.js"></script>

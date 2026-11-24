@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Env Form Fill – Edit details</title>
+  <style>
+    :root { color-scheme: light dark; --muted: #888; --line: #8884; }
+    body { font: 14px system-ui, sans-serif; max-width: 760px; margin: 24px auto; padding: 0 16px; }
+    p { color: var(--muted); margin: 4px 0 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; font-weight: 600; padding: 6px 4px; border-bottom: 1px solid var(--line); }
+    td { padding: 4px; }
+    td:last-child { width: 32px; }
+    th:first-child, td:first-child { width: 35%; }
+    input { width: 100%; box-sizing: border-box; padding: 7px 8px; font: inherit; }
+    button { padding: 7px 14px; font: inherit; cursor: pointer; }
+    .del { padding: 4px 8px; background: none; border: none; color: var(--muted); font-size: 16px; }
+    .del:hover { color: #dc2626; }
+    .bar { display: flex; align-items: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .spacer { flex: 1; }
+    #save { font-weight: 600; }
+    #status { color: var(--muted); }
+    details { margin-top: 28px; color: var(--muted); }
+    details ul { margin: 8px 0; padding-left: 20px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <h2>Edit details</h2>
+  <p>Name each detail the way forms label it. Case, spaces, dashes and underscores don't matter: "First name" fills <code>first_name</code> and <code>firstName</code>.</p>
+
+  <table>
+    <thead><tr><th>Name</th><th>Value</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <div class="bar">
+    <button id="add">+ Add field</button>
+    <span class="spacer"></span>
+    <span id="status"></span>
+    <button id="save">Save</button>
+  </div>
+  <div class="bar">
+    <button id="import">Import .env</button>
+    <button id="export">Export .env</button>
+    <input id="file" type="file" accept=".env,.txt,text/plain" hidden>
+  </div>
+
+  <details>
+    <summary>Tips for drop-downs, checkboxes, radios and dates</summary>
+    <ul>
+      <li><b>Drop-downs and radio buttons:</b> type the option as it appears on screen, e.g. <code>United States</code>.</li>
+      <li><b>Checkboxes:</b> <code>yes</code> to tick, <code>no</code> to untick.</li>
+      <li><b>Dates:</b> <code>2025-03-14</code>, <code>14 March 2025</code> or <code>March 14, 2025</code>. Avoid <code>03/04/2025</code>; it's ambiguous and date pickers will skip it. Plain text date boxes get your value exactly as typed.</li>
+      <li><b>Different labels on different sites:</b> add another row with the same value, e.g. both "Zip" and "Postal code".</li>
+    </ul>
+  </details>
+
+  <script type="module" src="edit.js"></script>
+</body>
+</html>

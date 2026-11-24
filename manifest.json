@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Env Form Fill",
+  "version": "1.0.0",
+  "description": "Fills form fields from a bundled .env file, matching keys case-insensitively.",
+  "permissions": ["activeTab", "scripting"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "Fill from .env" },
+  "commands": {
+    "fill-form": {
+      "suggested_key": { "default": "Alt+Shift+F" },
+      "description": "Fill the current page from .env"
+    }
+  }
+}
